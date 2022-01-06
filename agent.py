@@ -8,13 +8,12 @@ from keras.layers import Dense
 import matplotlib.pyplot as plt
 from keras.optimizers import Adam
 
+#"game.py" environment
 env = Paddle()
 np.random.seed(0)
 
 
 class DQN:
-
-    """ Implementation of deep q learning algorithm """
 
     def __init__(self, action_space, state_space):
 
@@ -29,6 +28,7 @@ class DQN:
         self.memory = deque(maxlen=100000)
         self.model = self.build_model()
 
+    # Stacking Layers
     def build_model(self):
 
         model = Sequential()
